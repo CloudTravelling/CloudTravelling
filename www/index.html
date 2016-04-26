@@ -6,58 +6,72 @@
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="lib/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/angular-chart/angular-chart.min.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/Chart.js/Chart.js"></script>
-    <script src="lib/angular-chart/angular-chart.min.js"></script>
 
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px; 
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+    </style>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
-
-    <!-- your app's js -->
     <script src="js/app.js"></script>
-
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
     <script src="js/services.js"></script>
-    <script src="js/services/educationServices.js"></script>
+    <script src="js/directives.js"></script>
 
-    <script src="js/commonControllers.js"></script>
-    <script src="js/commonControllers/LoginCtrl.js"></script>
-    <script src="js/commonControllers/MainCtrl.js"></script>
-
-    <script src="js/educationControllers.js"></script>
-    <script src="js/educationControllers/teacherControllers.js"></script>
-    <script src="js/educationControllers/rootControllers.js"></script>
-    <script src="js/educationControllers/switchControllers.js"></script>
-
-    <script src="js/directives/app+list.js"></script>
-    <script src="js/directives/app+userchat.js"></script>
-
-    <!-- 绗笁鏂规彃浠禞S搴� -->
+    <!-- Only required for Tab projects w/ pages in multiple tabs 
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+    -->
 
   </head>
-  <body ng-app="starter">
-    <!--
-      The nav bar that will be updated as we navigate between views.
-
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>-->
-    <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
-    <ion-nav-view></ion-nav-view>
-
+  <body ng-app="app" animation="slide-left-right-ios7">
+  <div>
+    <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
+        <ion-side-menu-content>
+            <ion-nav-bar class="bar-stable">
+                <ion-nav-back-button></ion-nav-back-button>
+                <ion-nav-buttons side="left">
+                    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
+            <ion-nav-view></ion-nav-view>
+        </ion-side-menu-content>
+        <ion-side-menu side="left" id="side-menu21">
+            <ion-header-bar class="bar-stable">
+                <div class="title">Menu</div>
+            </ion-header-bar>
+            <ion-content padding="true" class="side-menu-left has-header">
+                <div data-componentid="image1">
+                    <img src="img/nkyvJ717QXenpkRk8I9D_贴吧斜眼.jpg" width="100" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+                </div>
+                <h2 id="menu-heading1" style="color:#000000;text-align:center;" data-componentid="heading1">User</h2>
+                <ion-list data-componentid="list1">
+                    <label class="item item-input" data-componentid="search2">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input type="search" placeholder="">
+                    </label>
+                </ion-list>
+                <div class="spacer" data-componentid="spacer6" style="width: 0px; height: 0px;"></div>
+                <a ui-sref="index" menu-close="" id="menu-button10" class="button button-positive  button-block button-outline" data-componentid="button10">Index</a>
+                <button id="menu-button6" class="button button-positive  button-block button-outline" data-componentid="button6">Setting</button>
+                <button id="menu-button2" class="button button-assertive  button-block" data-componentid="button2">Quit</button>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+</div>
   </body>
 </html>
