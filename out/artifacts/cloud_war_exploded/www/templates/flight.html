@@ -1,0 +1,17 @@
+<ion-view title="Flight" id="page6" ng-controller="flightCtrl">
+    <div style="margin-top:43px; width: 100%; position: fixed; z-index: 100">
+      <img src="img/flight-head.png" style="width: 414px; height: 61px;">
+      <img src="img/search-button.png" style="width: 118px; height: 33px; margin-left: 148px; margin-left: 280px;">
+    </div>
+    <ion-content padding="false" class=" manual-remove-top-padding has-header" scroll="true">
+          <div class="list" style="margin-top: 94px; width: 100%;">
+            <a class="item item-thumbnail-left" href="#" ng-repeat="result in results">
+              <img ng-src="{{'img/' + result.Airline + '.png'}}">
+              <h2>{{result.Airline + ' ' + result.FlightNum}}</h2>
+              <p>{{'日期：' + result.FlightDate}}</p>
+              <p>{{result.DepTime + ' - ' + result.ArrTime}}</p>
+              <p>{{'准点率：' + result.OnTimeRate}}</p>
+            </a>
+          </div>
+    </ion-content>
+</ion-view>

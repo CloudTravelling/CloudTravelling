@@ -1,0 +1,22 @@
+<ion-view title="Bus" id="page3" ng-controller="busCtrl">
+  <ion-content padding="false" class=" manual-remove-top-padding has-header" scroll="true">
+    <div class="list" style="margin: 0px" ng-repeat="result in results">
+      <div ng-if="result.carCode == ''">
+        <a class="item item-thumbnail-left item-borderless" href="#" style="padding-bottom: 0px;">
+          <img src="img/roadIcon.png">
+          <h2 class="media-heading">{{result.stationName}}</h2>
+          <p>stationCode: {{result.stationCode}}</p>
+        </a>
+      </div>
+      <div ng-if="result.carCode != ''">
+        <a class="item item-thumbnail-left item-borderless" href="#" style="padding-bottom: 0px;">
+          <img src="img/busIcon.png">
+          <h2 class="media-heading">{{result.stationName}}</h2>
+          <p>stationCode: {{result.stationCode}}</p>
+          <p>carCode: {{result.carCode}}</p>
+          <p>ArrivalTime: {{result.ArrivalTime}}</p>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
